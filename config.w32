@@ -1,0 +1,8 @@
+// $ Id: $
+// vim:ft=javascript
+
+ARG_ENABLE('classnameresolver' , 'The unknown extension', 'no');
+if (PHP_CLASSNAMERESOLVER == "yes") {
+  EXTENSION("classnameresolver", "classnameresolver.c");
+  AC_DEFINE("HAVE_CLASSNAMERESOLVER", 1, "classnameresolver support");
+}
