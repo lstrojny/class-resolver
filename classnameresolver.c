@@ -31,7 +31,7 @@ PHP_MINIT_FUNCTION(classnameresolver)
 	classnameresolver_ce = zend_register_internal_class(&classnameresolver_class_entry TSRMLS_CC);
 
 	zend_do_begin_new_object_orig = zend_do_begin_new_object;
-	zend_do_begin_new_object_t = php_classnameresolver_do_begin_new_object;
+	zend_do_begin_new_object = php_classnameresolver_do_begin_new_object;
 
 	return SUCCESS;
 }
@@ -39,7 +39,7 @@ PHP_MINIT_FUNCTION(classnameresolver)
 
 PHP_MSHUTDOWN_FUNCTION(classnameresolver)
 {
-	zend_do_begin_new_object_t = zend_do_begin_new_object_orig;
+	zend_do_begin_new_object = zend_do_begin_new_object_orig;
 
 	return SUCCESS;
 }

@@ -19,7 +19,6 @@ PHP_MSHUTDOWN_FUNCTION(classnameresolver);
 PHP_MINFO_FUNCTION(classnameresolver);
 
 void (*zend_do_begin_new_object_orig)(znode *new_token, znode *class_type TSRMLS_DC);
-static void (*zend_do_begin_new_object_t) = zend_do_begin_new_object;
 void php_classnameresolver_do_begin_new_object(znode *new_token, znode *class_type TSRMLS_DC); 
 static zend_class_entry *classnameresolver_ce;
 
