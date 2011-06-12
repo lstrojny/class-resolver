@@ -2,8 +2,8 @@
 
 ## Implementation overview
 - Find all class declarations from `CG(class_table)`
-- Override `ce->object_new` with `php_classresolver_object_new()`
-- Store old `ce->object_new` in `CG(object_new)`
+- Override `ce->create_object` with `php_classresolver_create_object()`
+- If custom `create_object`-function exists: store old `ce->object_new` in `CLASSRESOLVER_G(object_new)`
 - Custom `create_object` handler:
   - If class resolver is registered, resolve class name with `Class\Resolver::resolve()`
     - Retrieve related class entry
